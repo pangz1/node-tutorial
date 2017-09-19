@@ -1,0 +1,29 @@
+{% extends "../common/layout.html" %}
+
+{% block header %}
+  {% include "../common/header.html" %}
+{% endblock %}
+
+{% block body %}
+<header>{{ data.department }}</header>
+<div>
+  <div>name: {{data.name}}</div>
+  <div>age: {{data.age}}</div>
+  {% if data.salary > 500 %}
+    <div>大于500</div>
+  {% else %}
+    <div>小于等于500</div>
+  {% endif %}
+  <span>居住地址</span>
+  <ul>
+    {% for address in data.address %}
+      <li>{{address}}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+
+{% block footer%}
+  {% include "../common/footer.html" %}
+{% endblock%}
