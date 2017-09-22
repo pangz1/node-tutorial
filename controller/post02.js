@@ -16,9 +16,9 @@ function requestPostData (id) {
 }
 
 exports.post = async function (ctx, next) {
-  let id = ctx.params.id
-  let data = await requestPostData(id)
+  console.log(ctx)
+  let data = await requestPostData(1)
 
   ctx.type = 'html'
-  ctx.body = ctx.render('personnel/personnel.html', data)
+  await ctx.render('personnel/personnel.html', data)
 }

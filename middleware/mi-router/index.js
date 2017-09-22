@@ -3,6 +3,7 @@ const koaCompose = require("koa-compose")
 const debug = require('debug')('mi-router')
 module.exports = (routerConfig) => {
     const router = koaRouter()
+    console.log(routerConfig)
     if (routerConfig && routerConfig.length) {
         routerConfig.forEach((routerInfo) => {
             let {match, method = "get", controller, middlewares} = routerInfo

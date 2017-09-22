@@ -1,11 +1,12 @@
 const Router = require('koa-router')()
-const BodyParser = require('koa-bodyparser')
+// const BodyParser = require('koa-bodyparser')
 const path = require("path")
 
 const miInit = require('./mi-init')
 const miRender = require('./mi-render')
 const miRouter = require('./mi-router')
 const miStaticFiles = require('./mi-static-files')
+
 const isProduction = process.env.NODE_ENV === 'production'
 
 module.exports = (app) => {
@@ -27,6 +28,8 @@ module.exports = (app) => {
    */
   app.use(miInit())
 
+
+
   /**
    * 处理静态文件
    */
@@ -37,7 +40,7 @@ module.exports = (app) => {
   /**
    * 解析POST请求
    */
-  app.use(BodyParser())
+  // app.use(BodyParser())
 
   /**
    * 指定控制器规则和视图规则 
