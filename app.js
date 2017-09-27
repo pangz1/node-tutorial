@@ -26,10 +26,6 @@ app
   .use(router.routes())
   .use(router.allowedMethods())
 
-
-
-
-
 console.log("app===================",app)
 app.listen(8080)
 console.log('app started at port 3000...');
